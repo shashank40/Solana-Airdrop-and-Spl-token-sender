@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+      "rootDir" : "src",
+      "target": "es5",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "allowJs": true,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "resolveJsonModule": true,
+      "declaration": false,
+      "outDir": "dist/",
+      "lib": [
+        "es7",
+        "dom"
+      ]
+    },
+    "include": [
+      "src/"
+    ]
+  }
