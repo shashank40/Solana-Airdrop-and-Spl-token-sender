@@ -15,4 +15,7 @@ export const airdrop = async (address : string, amount: number) => {
         lastValidBlockHeight: latestBlockHash.lastValidBlockHeight,
          signature: signature});
     
+    const response = await showBalance(address);
+    return response
+    
 }

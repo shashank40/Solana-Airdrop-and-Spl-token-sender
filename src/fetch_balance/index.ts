@@ -6,7 +6,7 @@ export const showBalance = async (address: string) => {
     const response = await connection.getAccountInfo(publicKey);
 
     if (response)
-    return response?.lamports
+    return "You have devenet solana count = " + response?.lamports/LAMPORTS_PER_SOL;
     else
     return `No Account found with this ${address}`;
 }

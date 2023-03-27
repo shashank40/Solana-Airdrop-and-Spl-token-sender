@@ -38,13 +38,16 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.airdrop = void 0;
 var web3_js_1 = require("@solana/web3.js");
+var index_1 = require("../fetch_balance/index");
 var airdrop = function (address, amount) { return __awaiter(void 0, void 0, void 0, function () {
-    var publicKey, connection, signature, latestBlockHash;
+    var publicKey, connection, signature, latestBlockHash, response;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
                 publicKey = new web3_js_1.PublicKey(address);
                 connection = new web3_js_1.Connection("https://api.devnet.solana.com", "confirmed");
+                if (!connection || connection == null)
+                    return [2 /*return*/, "No Account found with this ".concat(address)];
                 return [4 /*yield*/, connection.requestAirdrop(publicKey, amount * web3_js_1.LAMPORTS_PER_SOL)];
             case 1:
                 signature = _a.sent();
@@ -56,7 +59,10 @@ var airdrop = function (address, amount) { return __awaiter(void 0, void 0, void
                         signature: signature })];
             case 3:
                 _a.sent();
-                return [2 /*return*/];
+                return [4 /*yield*/, (0, index_1.showBalance)(address)];
+            case 4:
+                response = _a.sent();
+                return [2 /*return*/, response];
         }
     });
 }); };

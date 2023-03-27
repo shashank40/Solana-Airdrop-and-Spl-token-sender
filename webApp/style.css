@@ -90,3 +90,11 @@ body
     font-size: 1em;
     text-transform: uppercase;
 }
+.result{
+    color: #fff;
+    margin-top: 5px;
+    margin-left: 55px;
+    position: relative;
+    width: 125px;
+    align-items: center
+}

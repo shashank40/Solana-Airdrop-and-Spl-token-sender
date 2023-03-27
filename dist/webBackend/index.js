@@ -36,24 +36,25 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.showBalance = void 0;
-var web3_js_1 = require("@solana/web3.js");
-var showBalance = function (address) { return __awaiter(void 0, void 0, void 0, function () {
-    var publicKey, connection, response;
+exports.dropSolana = void 0;
+var index_1 = require("../airdrop_sol/index");
+var dropSolana = function () { return __awaiter(void 0, void 0, void 0, function () {
+    var address, count, message, response;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                publicKey = new web3_js_1.PublicKey(address);
-                connection = new web3_js_1.Connection("https://api.devnet.solana.com", "confirmed");
-                return [4 /*yield*/, connection.getAccountInfo(publicKey)];
+                address = document.querySelector("#address");
+                count = document.querySelector("#count");
+                message = document.querySelector("#result");
+                if (address == null || count == null) {
+                    message.innerHTML = 'Enter both address and count';
+                }
+                return [4 /*yield*/, (0, index_1.airdrop)(address.value, +count.value)];
             case 1:
                 response = _a.sent();
-                if (response)
-                    return [2 /*return*/, "You have devenet solana count = " + (response === null || response === void 0 ? void 0 : response.lamports) / web3_js_1.LAMPORTS_PER_SOL];
-                else
-                    return [2 /*return*/, "No Account found with this ".concat(address)];
+                message.innerHTML = response;
                 return [2 /*return*/];
         }
     });
 }); };
-exports.showBalance = showBalance;
+exports.dropSolana = dropSolana;
