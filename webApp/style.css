@@ -16,6 +16,14 @@ body
     gap: 30px;
     background-image: linear-gradient(to right top, #9945ff, #8966ff, #7e7eff, #7c92ff, #84a3fc, #6ab2ff, #54beff, #4acaff, #00d8fd, #00e3ea, #00ecc5, #14f195);
 }
+.heading
+{   
+    margin-top: 15px;
+    margin-left: 20px;
+    color: #fff;
+    position: relative;
+    align-items: center;
+}
 .inputBox
 {
     position: relative;
@@ -27,7 +35,7 @@ body
     padding: 10px;
     border: 1px solid rgba(255, 255, 255, 0.25);
     background-image: linear-gradient(to right top, #9945ff, #8966ff, #7e7eff, #7c92ff, #84a3fc, #6ab2ff, #54beff, #4acaff, #00d8fd, #00e3ea, #00ecc5, #14f195);
-    border-radius: 5px;
+    border-radius: 10px;
     outline: none;
     color: #fff;
     font-size: 1em;
@@ -68,4 +76,17 @@ body
     background: #00dfc4;
     color: #1d2b3a;
     border-radius: 2px;
+}
+.submitButton
+{   
+    margin-top: 15px;
+    margin-left: 20px;
+    color: #00dfc4;
+    position: relative;
+    width: 125px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    font-size: 1em;
+    text-transform: uppercase;
 }
