@@ -89,12 +89,17 @@ body
     border-radius: 20px;
     font-size: 1em;
     text-transform: uppercase;
+    cursor: pointer;
+    transition: .3s;
+}
+.submitButton:focus{
+    color: #1d2b3a
 }
 .result{
     color: #fff;
     margin-top: 5px;
-    margin-left: 55px;
-    position: relative;
-    width: 125px;
-    align-items: center
+    margin-left: 25px;
+    align-items: center;
+    display: inline-block;
+    width: fit-content;
 }

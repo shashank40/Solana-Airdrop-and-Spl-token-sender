@@ -1,16 +1,13 @@
-import {airdrop} from '../airdrop_sol/index'
+import {airdrop} from "../airdrop_sol/index.js"
 
-export const airDropSolana = async () => {
-    let address = document.querySelector("#address") as HTMLInputElement | null;
-    let count = document.querySelector("#count")as HTMLInputElement | null;
-    let message = document.querySelector("#result");
+export const airDropSolana =  async (address: HTMLInputElement, count: HTMLInputElement) => {
     
     if(address == null || count == null){
-        message.innerHTML = 'Enter both address and count'
+        return 'Enter both address and count'
     }
+    let response: string = await airdrop(address.value, +count.value);
+    response = await Promise.resolve(response)
 
-
-    let response = await airdrop(address.value, +count.value);
-    message.innerHTML = response
+    return response
 
 }

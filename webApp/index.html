@@ -17,9 +17,13 @@
         <input id="count" type="text" required="required">
         <span>Number of Devnet Sols</span>
     </div>
-    <button onclick=" await airDropSolana()" class= "submitButton" type="button">Submit</button>
-    <h3 class="result"></h3>
-
-    <script src="../src/webBackend/index.ts"></script>
+    <button class= "submitButton" type="button" id="submitButton1">Submit</button>
+    <script type = "importmap">
+        { "imports": {
+            "@solana/web3.js" : "https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js"
+        } }
+    </script>
+    <script type="module" src="../main.js"></script>
+    <h3 class="result" id="result"></h3>
 </body>
 </html>

@@ -1,5 +1,5 @@
 const { exec } = require('child_process');
-import * as web3 from "@solana/web3.js";
+import * as web3 from "@solana/web3.js"
 
 export function loadWalletKey(keypairFile:string): web3.Keypair {
   const fs = require("fs");
