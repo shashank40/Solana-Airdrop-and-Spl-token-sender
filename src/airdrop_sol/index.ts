@@ -1,9 +1,11 @@
 import * as web3 from '@solana/web3.js';
 
+const {PublicKey, Connection, LAMPORTS_PER_SOL} = web3
+
 import {showBalance} from '../fetch_balance/index.js';
 
 export const airdrop = async (address : string, amount: number) => {
-    const {PublicKey, Connection, LAMPORTS_PER_SOL} = web3
+
     if(address==null || amount==null)
         return 'Enter both address and amount';
     let response: string;
