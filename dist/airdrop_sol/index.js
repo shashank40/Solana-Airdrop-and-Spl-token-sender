@@ -7,18 +7,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as web3 from '@solana/web3.js';
+import { PublicKey, Connection, LAMPORTS_PER_SOL } from '@solana/web3.js';
 import { showBalance } from '../fetch_balance/index.js';
 export const airdrop = (address, amount) => __awaiter(void 0, void 0, void 0, function* () {
     if (address == null || amount == null)
         return 'Enter both address and amount';
     let response;
     try {
-        const publicKey = new (web3).PublicKey(address);
-        const connection = new (web3).Connection("https://api.devnet.solana.com", "confirmed");
+        const publicKey = new PublicKey(address);
+        const connection = new Connection("https://api.devnet.solana.com", "confirmed");
         if (!connection || connection == null)
             return `No Account found with this ${address}`;
-        const signature = yield connection.requestAirdrop(publicKey, amount * (web3).LAMPORTS_PER_SOL);
+        const signature = yield connection.requestAirdrop(publicKey, amount * LAMPORTS_PER_SOL);
         const latestBlockHash = yield connection.getLatestBlockhash();
         yield connection.confirmTransaction({ blockhash: latestBlockHash.blockhash,
             lastValidBlockHeight: latestBlockHash.lastValidBlockHeight,

@@ -7,21 +7,21 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as web3 from '@solana/web3.js';
+import { PublicKey, Connection, LAMPORTS_PER_SOL } from '@solana/web3.js';
 export const showBalance = (address) => __awaiter(void 0, void 0, void 0, function* () {
     if (address == null)
         return 'Enter an address to continue';
     let response;
     try {
-        const publicKey = new (web3).PublicKey(address);
-        const connection = new (web3).Connection("https://api.devnet.solana.com", "confirmed");
+        const publicKey = new PublicKey(address);
+        const connection = new Connection("https://api.devnet.solana.com", "confirmed");
         response = yield connection.getAccountInfo(publicKey);
     }
     catch (error) {
         return error.message;
     }
     if (response)
-        return "You have devenet solana count = " + (response === null || response === void 0 ? void 0 : response.lamports) / (web3).LAMPORTS_PER_SOL;
+        return "You have devenet solana count = " + (response === null || response === void 0 ? void 0 : response.lamports) / LAMPORTS_PER_SOL;
     else
         return `No Account found with this ${address}`;
 });

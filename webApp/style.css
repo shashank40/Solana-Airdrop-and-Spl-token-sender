@@ -80,7 +80,7 @@ body
 .submitButton
 {   
     margin-top: 15px;
-    margin-left: 20px;
+    margin-left: 15px;
     color: #00dfc4;
     position: relative;
     width: 125px;
@@ -102,4 +102,20 @@ body
     align-items: center;
     display: inline-block;
     width: fit-content;
+}
+.optionTag{
+    width: 150px;
+    border-color: #fff;
+    border-radius: 5px;
+    color: #00dfc4;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+}
+.optionLabel{
+    margin-top: 50px;
+    margin-bottom: -15px;
+    color: white;
+    text-transform: uppercase;
+    position: relative;  
 }
