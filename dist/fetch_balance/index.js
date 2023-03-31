@@ -7,7 +7,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { PublicKey, Connection, LAMPORTS_PER_SOL } from '@solana/web3.js';
+import * as web3 from '@solana/web3.js';
+const { PublicKey, Connection, LAMPORTS_PER_SOL } = web3;
 export const showBalance = (address) => __awaiter(void 0, void 0, void 0, function* () {
     if (address == null)
         return 'Enter an address to continue';

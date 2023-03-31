@@ -1,7 +1,9 @@
 import * as web3 from '@solana/web3.js';
 
+const {PublicKey, Connection, LAMPORTS_PER_SOL} = web3
+
 export const showBalance = async (address: string) => {
-    const {PublicKey, Connection, LAMPORTS_PER_SOL} = web3
+
     if(address==null)
     return 'Enter an address to continue'
 
